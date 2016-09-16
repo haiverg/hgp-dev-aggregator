@@ -11,7 +11,7 @@ public class BodyAggregationStrategy implements AggregationStrategy {
 			return newExchange;
 		}
 		String newBody = newExchange.getIn().getBody(String.class);
-		String oldBody = newExchange.getIn().getBody(String.class);
+		String oldBody = oldExchange.getIn().getBody(String.class);
 		newBody = newBody.concat(oldBody);
 		newExchange.getIn().setBody(newBody);		
 		return newExchange;
